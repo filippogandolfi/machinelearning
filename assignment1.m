@@ -10,6 +10,7 @@ weather_data = table2array(weatherdata);
 index = randperm(n);
 trset = weather_data(index(1:10), :);
 teset = weather_data(index(11:end), 1:(d-1));
+target = weather_data(index(11:end),d);
 
 % Calling the Naive Bayes classifier
-[prob_tot, final_prob] = naiveBayes(trset, teset);
+[result, e_rate] = naiveBayes(trset, teset, target);

@@ -1,4 +1,4 @@
-function [prob_tot, final_prob] = naiveBayes(trset,teset)
+function [result, e_rate] = naiveBayes(trset,teset,target)
     [n, d] = size(trset);
     [m, f] = size(teset);
     
@@ -65,30 +65,36 @@ function [prob_tot, final_prob] = naiveBayes(trset,teset)
     end      
   %lejosonfe del training 
   
-  %Classify the test set according to the inferred rule, and return the classification obtained
+  %Classify the test set according to the inferred rule, and return the
+  %classification obtained
   prob_situa0 = ones(m,num_classes);
   for k=1:num_classes
       for i=1:m
         for j=1:f
               val = teset(j,i);
               prob_situa0 (i,k) = prob_situa0 (i,k) * prob_tot(val,i,k);
-          end
+        end
           final_prob = prob_situa0 * prob_classes(k,d);
       end
   end
-      
+  % confrontare le probabilità del si con quelle del no, la maggiore vince
+  % e stampa il risultato=1
+  result = ones(m,num_classes-1);
+  for i=1:m
+      for j=1:(num_classes-1)
+          if final_prob(i,j) > final_prob(i,j+1)
+              result(i,j)=(2);
+          else
+              result(i,j)=(1);
+          end
+      end
+  end  
+  e_rate=sum(result~=target)/m; 
+  
+  %%
+  %task3
+  
+
 end
 
-%esempio lezione(
-% func
-% func(1)
-% a = [1 2; 2 3; 4 5]
-% [a a(:,1) == 2]
-% sum(a(:,1)==2)
-% sum(a(:,1)==2)/size(a,1)
-% probability of find 2 in this column
-% for val=1:max(a(:;1))
-% disp(sum(a(:,1)==val)/size(a,1))
-% clca
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% esempio 2 lezione del 15/10
+%esempio lezione
