@@ -1,6 +1,6 @@
 # Machine learning
 
-# Assignment
+# Assignment test
 
 Task 1: Data preprocessing
 
@@ -71,3 +71,6 @@ where:
 
     n is the number of values of attribute x
     you can use a = 1. As a further refinement, you can experiment with a > 1 (which means "I trust my prior belief more than the data") or with a < 1 (which means "I trust my prior belief less than the data")
+    
+# My report
+To do.
