@@ -72,5 +72,11 @@ where:
     n is the number of values of attribute x
     you can use a = 1. As a further refinement, you can experiment with a > 1 (which means "I trust my prior belief more than the data") or with a < 1 (which means "I trust my prior belief less than the data")
     
-# My report
-To do.
+# My report | Abstract
+This assignment is based on naive Bayes classifier that is a probabilistic machine learning
+algorithm based on Bayes Theorem. It is called ”naive” because it operates on the assumption
+of independence of the features that is not always true. The requirement was to implement its
+algorithm as a Matlab function. We had also to implement in a second function an improved
+version of the classifier that tries to overcome some of its limitations. The final results show
+that the first function works well in normal situations, but when we have in input a particular
+data set the improved version works better. *
