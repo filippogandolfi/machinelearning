@@ -63,7 +63,7 @@ function [final_prob3,e_rate3] = task3(trset3,max_init_val,teset,target)
     for i=1:d-1
         for j=1:max(max_val)
             for k=1:num_classes
-                prob_tot3(j,i,k) = (prob_tot3(j,i,k)+a)/(prob_classes(k,d)+(a*n3(j))); % pounded by the number of classes
+                prob_tot3(j,i,k) = (prob_tot3(j,i,k)+a)/(prob_classes(k,d)+(a*n3(j))); % here the difference with the task 1 and 2
             end
         end
     end

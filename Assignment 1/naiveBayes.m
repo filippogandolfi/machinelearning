@@ -49,12 +49,13 @@ function [prediction, e_rate] = naiveBayes(trset,teset,target)
             for p=1:max_val(i)
                 for k=1:num_classes
                     if (trset(j,i)==p && trset(j,d)==k)
-                        prob_tot(p,i,k) = prob_tot(p,i,k)+1; % create N (num_classes) matrices with them probability for every value
+                        prob_tot(p,i,k) = prob_tot(p,i,k)+1; % create N (num_classes) matrices with their probability for each value
                     end
                 end
             end
         end
     end
+  
     
     
     for i=1:d-1
@@ -74,7 +75,7 @@ function [prediction, e_rate] = naiveBayes(trset,teset,target)
               val = teset(j,i); % used for findind the values in the test and match with the one trained
               prob_situa (i,k) = prob_situa (i,k) * prob_tot(val,i,k); % prob for each row
         end
-          final_prob = prob_situa * prob_classes(k,d); % applying the Bayes formula
+          final_prob = prob_situa * prob_classes(k,d); % applying the Bayes formula (called in the report Scenario)
       end
   end
   
