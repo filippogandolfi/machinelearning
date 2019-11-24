@@ -10,3 +10,4 @@ these algorithms, one-dimensional problem with or without intercept, multi-dimen
 lem on a full multi-column dataset. At the end, it was required also to discover the average
 of the Mean Square Error of a part of the database (10% and 90%).
 # Third Assignment: kNN Classifier
+This assignment is based on the k-Nearest Neighbor classification algorithm with the MNIST dataset of the handwritten digits, that it's a non-parametric method used for classifi- cation when the complexity depends on the numbers of available data. We used the Euclidean distance metric and we, also, use a target. At the end, we performs test in order to find which k value was the best and other feature, however, the biggest problem was computational time!
